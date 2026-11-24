@@ -5,7 +5,7 @@
 **Roadmap:** Track 6, Project 3 (contract security and cross-chain interop) · Track 5, Project 1 (attack registry and regression checks) · Track 5, Project 2 (economic and incentive attack simulator)  
 **Duration:** 24 weeks, four 6-week milestones  
 **Request:** 1,600,000 GNK from the Community Pool (≈1.38% of the pool), held in the existing `code_id 107` milestone escrow approved in [Proposal #82](https://gonka.gg/network/proposals/82) and released in six tranches. Hosts can claw back everything still in the escrow with one governance vote. No USDT is requested.  
-**Status:** Submitted on-chain for a standard 48-hour host vote. Questions are welcome on [GitHub Discussion #2322](https://github.com/gonka-ai/gonka/discussions/2322) and on [gonka.vote](https://gonka.vote/proposal/dyel8w) during the vote.
+**Status:** On-chain as [Proposal #120](https://gonka.gg/network/proposals/120), with host voting open until 26 November 2026, 14:01 UTC. The submitted text is tag [`v1.0`](https://github.com/quorint/gonka-security-proposal/tree/v1.0). Questions are welcome on [GitHub Discussion #2322](https://github.com/gonka-ai/gonka/discussions/2322) and on [gonka.vote](https://gonka.vote/governance/120) during the vote.
 
 ---
 
