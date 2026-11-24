@@ -4,7 +4,7 @@
 **Category:** Protocol Improvements  
 **Roadmap:** Track 6, Project 3 (contract security and cross-chain interop) · Track 5, Project 1 (attack registry and regression checks) · Track 5, Project 2 (economic and incentive attack simulator)  
 **Duration:** 24 weeks, four 6-week milestones  
-**Request:** 1,600,000 GNK from the Community Pool (≈1.38% of the pool), held in the existing `code_id 107` milestone escrow approved in Proposal #82 and released in six tranches. Hosts can claw back everything still in the escrow with one governance vote. No USDT is requested.  
+**Request:** 1,600,000 GNK from the Community Pool (≈1.38% of the pool), held in the existing `code_id 107` milestone escrow approved in [Proposal #82](https://gonka.gg/network/proposals/82) and released in six tranches. Hosts can claw back everything still in the escrow with one governance vote. No USDT is requested.  
 **Status:** Draft for community and committee review. Nothing goes on-chain before the gonka.vote pre-proposal, committee review and an AMA.
 
 ---
@@ -13,7 +13,7 @@
 
 On 18 November 2026 an attacker manipulated the key-generation ceremony on the Gonka chain, registered a new epoch key on the Ethereum bridge, and within 72 seconds withdrew the bridge's entire stablecoin reserve (884,150.87 USDT and 647.74 USDC) and minted 22,000,000 unbacked WGNK. After a fast response by core contributors, MillCreek R&D and analytics partners, the attacker returned the assets the next day, and consensus and inference were never affected. The bridge remains disabled, the Ethereum contract cannot be paused, and the community has just started discussing compensation and re-backing (Discussion #2306).
 
-Relaunching the bridge will require a fixed key-generation path, a new bridge contract and key ceremony, and re-backing transactions, and hosts will be asked to approve each of them. Proposal #118 puts incident response and bridge security in MillCreek's scope. Quorint proposes to be the independent second pair of eyes, because no team should be the only reviewer of its own security fix.
+Relaunching the bridge will require a fixed key-generation path, a new bridge contract and key ceremony, and re-backing transactions, and hosts will be asked to approve each of them. [Proposal #118](https://gonka.gg/network/proposals/118) puts incident response and bridge security in MillCreek's scope. Quorint proposes to be the independent second pair of eyes, because no team should be the only reviewer of its own security fix.
 
 The first 6 weeks (Milestone 1) are a bridge relaunch security gate. The remaining 18 weeks deliver two roadmap projects that have no funded owner yet, an executable attack registry (Track 5, Project 1) and an economic attack simulator (Track 5, Project 2), plus independent audits of the next high-risk upgrades. These include per-escrow DKG (#1748), which brings the same class of key-generation ceremony into every escrow.
 
@@ -22,7 +22,7 @@ The first 6 weeks (Milestone 1) are a bridge relaunch security gate. The remaini
 | Milestone 1 (weeks 1–6) | Bridge relaunch security gate: private root-cause verification, `x/bls` key-generation audit, bridge v2 contract review, re-backing transaction review, `gonka-bridge-sentinel` and invariant suites |
 | Milestone 2 (weeks 7–12) | L1, P2P, devshard v7 and CosmWasm treasury audit; `gonka-attack-registry` v1 (≥20 attack classes) |
 | Milestone 3 (weeks 13–18) | `gonka-econ-sim` v1 and a quantitative parameter risk report |
-| Milestone 4 (weeks 19–24) | Audits of per-escrow DKG (#1748), Decode-PoC and image-to-text support (Proposal #118 scope) and Confidential MLNode (#951); registry v2 (≥35 classes); handoff |
+| Milestone 4 (weeks 19–24) | Audits of per-escrow DKG (#1748), Decode-PoC and image-to-text support ([Proposal #118](https://gonka.gg/network/proposals/118) scope) and Confidential MLNode (#951); registry v2 (≥35 classes); handoff |
 | Payment | 1,600,000 GNK in six tranches (days 0, 45, 90, 135, 180, 210), ≈ $208K at today's price ($0.13) |
 | Host protection | Immutable escrow with no admin, a public report 5 days before every unlock, and a one-vote clawback |
 | Output | Four permanent open-source repositories (Apache-2.0/MIT); every audit report published once fixes ship |
@@ -56,12 +56,12 @@ Public reports about this surface predate the incident: weak dealer approval (#8
 
 ### 2.3 Beyond the bridge: a fast-moving codebase
 
-- devshard v6 went live with Proposal #116, and a v7 prerelease reached testnet on 19 November.
-- Proposal #118 includes the Decode-PoC mainnet rollout and image-to-text support. Per-escrow BLS DKG (#1748) and Confidential MLNode (#951) are in design.
+- devshard v6 went live with [Proposal #116](https://gonka.gg/network/proposals/116), and a v7 prerelease reached testnet on 19 November.
+- [Proposal #118](https://gonka.gg/network/proposals/118) includes the Decode-PoC mainnet rollout and image-to-text support. Per-escrow BLS DKG (#1748) and Confidential MLNode (#951) are in design.
 - Gonka maintains its own Cosmos SDK and CometBFT forks; PR #2319 most recently added a PEX request guard for the v0.2.18 halt reported in #2299.
 - Open issues show economic and settlement edge cases that need quantitative answers: executor-reported output tokens checked only on sampled replays (#2000), unbounded validations in flight (#2298), an unbounded `validation_sample_size` (#2210), and mis-wired or unused slashing parameters (#2208, #1726).
 
-The most recent public vendor findings we could find are CertiK's (Ethereum bridge preliminary report in February 2026, GEB-series issues through April 2026). Trail of Bits and HackerOne were engaged through Bitfury and reimbursed in Proposal #117 (607,250 USDT). Point-in-time audits are valuable, but they don't leave regression tests behind while the code keeps changing.
+The most recent public vendor findings we could find are CertiK's (Ethereum bridge preliminary report in February 2026, GEB-series issues through April 2026). Trail of Bits and HackerOne were engaged through Bitfury and reimbursed in [Proposal #117](https://gonka.gg/network/proposals/117) (607,250 USDT). Point-in-time audits are valuable, but they don't leave regression tests behind while the code keeps changing.
 
 ### 2.4 Three roadmap projects without a funded owner
 
@@ -80,8 +80,8 @@ Quorint is an independent security research and audit firm registered in the Net
 **Prior work on Gonka.** In July 2026 Quorint's research team disclosed a Critical consensus-liveness vulnerability in Gonka, awarded a $20,000 bug bounty; the full write-up was published after remediation ([Decimal-Exponent Bomb in Gonka](https://quorint.xyz/research/gonka-decimal-exponent-bomb/)). An unbounded `int32` exponent in Gonka's custom `Decimal` type made `MsgValidation.ValidateBasic()` materialize `10^|exponent|` before gas metering or signature checks. Wrapped in `authz.MsgExec`, a transaction from an attacker with no participant key and no `authz` grant passed `CheckTx` and crashed every validator in `FinalizeBlock`, before the grant check was reached.
 
 **Other L1 and cryptography work.**
-- Zcash Zebra: two Critical pre-release consensus-divergence findings (#10461).
-- Zcash Zakura: full-node and P2P denial-of-service findings (PRs #1911, #1915, #1962), followed by a commissioned protocol and consensus assessment ([OpenZcash Coinholder Proposal #127](https://openzcash.org/coinholders/proposals/127), $67,500).
+- Zcash Zebra: two Critical pre-release consensus-divergence findings (ZcashFoundation/zebra#10461).
+- Zcash Zakura: full-node and P2P denial-of-service findings (zakura-core/zakura#1911, zakura-core/zakura#1915, zakura-core/zakura#1962), followed by a commissioned protocol and consensus assessment ([OpenZcash Coinholder Proposal #127](https://openzcash.org/coinholders/proposals/127), $67,500).
 - Zcash Voting: ongoing cryptographic protocol assessment.
 
 **Team for this engagement.** A principal researcher leads all manual and cryptographic review and proof-of-concept work for the full 24 weeks. A senior engineer builds the fuzzing suites, the multi-node harness and the simulator.
@@ -119,7 +119,7 @@ The bridge v2 code is written by MillCreek. If it is not ready by week 6, the re
    - The `community-sale` and `liquidity-pool` CosmWasm contracts.
 2. **`gonka-attack-registry` v1.** At least 20 attack classes encoded as deterministic regression checks, with a Byzantine-peer and malicious-executor harness that runs in `testermint` CI and on the Community DevNet. First entries include the 18 November attack class (published only after the fix ships), the public key-generation and bridge classes above, pre-ante resource bombs, `authz` wrapper bypasses, stream truncation (#1841, #2104) and cPoC segment edge cases (#2013, #2015).
 
-This complements `@vitaly-andr`'s in-process Cosmos SDK simulation work (#982, #1228) rather than duplicating it: the registry runs out-of-process, multi-node scenarios. It also plugs into the External Test Lab and Community DevNet (Proposal #82) instead of building parallel infrastructure.
+This complements `@vitaly-andr`'s in-process Cosmos SDK simulation work (#982, #1228) rather than duplicating it: the registry runs out-of-process, multi-node scenarios. It also plugs into the External Test Lab and Community DevNet ([Proposal #82](https://gonka.gg/network/proposals/82)) instead of building parallel infrastructure.
 
 ### Workstream C — Economic and validation attack simulator (Track 5, Project 2) — Milestone 3
 
@@ -137,7 +137,7 @@ It ships with CLI scenarios, parameter-sweep notebooks and a parameter risk repo
 ### Workstream D — Pre-mainnet upgrade audits — Milestone 4
 
 1. **Per-escrow BLS DKG (#1748):** NIZK dealing proofs, Fiat-Shamir transcript binding, complaint soundness, on-chain verification cost and reconstruction under adaptive aborts. After 18 November this is the highest-value item.
-2. **Decode-PoC rollout and image-to-text support (Proposal #118 scope; #1198):** parser bounds, deterministic image-token hashing between executor and validator, and memory amplification.
+2. **Decode-PoC rollout and image-to-text support ([Proposal #118](https://gonka.gg/network/proposals/118) scope; #1198):** parser bounds, deterministic image-token hashing between executor and validator, and memory amplification.
 3. **Confidential MLNode (#951):** attestation verification (Intel TDX, AMD SEV-SNP, NVIDIA CC), on-chain version pinning and `report_data` binding.
 
 If any of these slips past week 24, the hours move to whichever release candidate or roadmap security item carries the highest risk at the time, agreed publicly with MillCreek and the Product Committee.
@@ -189,7 +189,7 @@ T1 (day 0) funds mobilization so Milestone 1 can start immediately.
 ### 8.1 Amount and pricing
 
 - **Total: 1,600,000 GNK from the Community Pool. No USDT.**
-- That is ≈ $208,000 at the 24 November price ($0.13) and ≈ $266,000 at the 30-day average ($0.167). The cost breakdown in 8.4 uses a $0.15 reference price between the two. We deliberately do not value GNK at the $0.60 Community Sale price from Proposal #117.
+- That is ≈ $208,000 at the 24 November price ($0.13) and ≈ $266,000 at the 30-day average ($0.167). The cost breakdown in 8.4 uses a $0.15 reference price between the two. We deliberately do not value GNK at the $0.60 Community Sale price from [Proposal #117](https://gonka.gg/network/proposals/117).
 - It is 1.38% of the Community Pool (115.58M GNK on 24 November).
 - Amounts are fixed in GNK. Quorint carries all price and liquidity risk after approval: no top-ups and no re-pricing.
 
@@ -216,9 +216,9 @@ GNK trades thinly. On 24 November the only active market for native GNK listed b
 
 ### 8.5 Reference points
 
-- Proposal #117 reimbursed 607,250 USDT for point-in-time Trail of Bits and HackerOne engagements.
-- Proposal #82 (External Test Lab) received 88,000 USDT and 80,000 GNK for a 4-month pilot through the same escrow contract proposed here.
-- Proposal #118 (MillCreek) received 866,000 USDT for two months of full-team work, paid upfront without escrow.
+- [Proposal #117](https://gonka.gg/network/proposals/117) reimbursed 607,250 USDT for point-in-time Trail of Bits and HackerOne engagements.
+- [Proposal #82](https://gonka.gg/network/proposals/82) (External Test Lab) received 88,000 USDT and 80,000 GNK for a 4-month pilot through the same escrow contract proposed here.
+- [Proposal #118](https://gonka.gg/network/proposals/118) (MillCreek) received 866,000 USDT for two months of full-team work, paid upfront without escrow.
 
 This proposal asks for ≈ $208–266K in value over six months, depending on the GNK price, fully escrowed and subject to clawback, and leaves four open-source repositories behind.
 
@@ -226,16 +226,16 @@ This proposal asks for ≈ $208–266K in value over six months, depending on th
 
 ## 9. Escrow and host protection
 
-Funds go into a new instance of the milestone escrow contract that hosts already approved for Proposal #82 (98.2% Yes), so there is no new contract code to review.
+Funds go into a new instance of the milestone escrow contract that hosts already approved for [Proposal #82](https://gonka.gg/network/proposals/82) (98.2% Yes), so there is no new contract code to review.
 
 - **Contract:** `code_id 107`, checksum `94b141625b7641e6ad57266420b18a4af72eac49b8110cb92719755590b463bd`, source https://github.com/paranjko/testlab-devnet-escrow/tree/1b2e529876141816b5c2130840d04fb93694bf72
-- **Escrow address** (Instantiate2, creator = governance module, salt `quorint-gonka-security-2026`): `gonka1m5gr4pkemg7fyml3jlkecpvxzprrkglfu05jfe8kmm38780ajp5s9qznhg`. The same derivation reproduces the Proposal #82 escrow address (`gonka1g57f45qjvn0529vpgj8x8mzt8r5k4audchm3pp9pezywxwf4rexqlj8ayw`), so anyone can check it with the script in https://github.com/quorint/gonka-security-proposal/tree/main/verify.
+- **Escrow address** (Instantiate2, creator = governance module, salt `quorint-gonka-security-2026`): `gonka1m5gr4pkemg7fyml3jlkecpvxzprrkglfu05jfe8kmm38780ajp5s9qznhg`. The same derivation reproduces the [Proposal #82](https://gonka.gg/network/proposals/82) escrow address (`gonka1g57f45qjvn0529vpgj8x8mzt8r5k4audchm3pp9pezywxwf4rexqlj8ayw`), so anyone can check it with the script in https://github.com/quorint/gonka-security-proposal/tree/main/verify.
 - **Recipient (Quorint):** `gonka1ggt0d4jqmztnmh86na3m99c9d3q7s6h2dkd2qv`. Every transfer out of this address is reported under Section 8.3.
 - **No admin and no migration.** The recipient, amounts and unlock days are fixed at instantiation.
 - **Claim** is permissionless and pays only matured tranches, only to the fixed recipient.
 - **Clawback:** one governance vote cancels the escrow and returns everything still in it to the Community Pool.
 - **Backstop:** after day 270 anyone can close the escrow and sweep any remainder to the Community Pool.
-- Unlocks are time-based, as in Proposal #82. Enforcement is the public report 5 days before each unlock plus the clawback.
+- Unlocks are time-based, as in [Proposal #82](https://gonka.gg/network/proposals/82). Enforcement is the public report 5 days before each unlock plus the clawback.
 
 | Tranche | Unlock day | GNK | Condition |
 |---|---|---|---|
@@ -305,7 +305,7 @@ Approve a 24-week engagement with Quorint covering an independent security revie
 
 - Quorint: https://quorint.xyz · research: https://quorint.xyz/research/ · audits: https://quorint.xyz/audits/ · contact@quorint.xyz
 - Gonka disclosure: https://quorint.xyz/research/gonka-decimal-exponent-bomb/
-- OpenZcash Coinholder Proposal #127: https://openzcash.org/coinholders/proposals/127
+- OpenZcash Coinholder Proposal 127: https://openzcash.org/coinholders/proposals/127
 - Incident summaries: https://gnk.space/news/2026-11-21 · https://blockint.ai/blog/gonka-bridge-exploit-606-eth-to-bitcoin-and-back-593-eth-returned
 - Compensation discussion: https://github.com/gonka-ai/gonka/discussions/2306
-- Escrow precedent (Proposal #82): https://github.com/gonka-ai/gonka/discussions/1388
+- Escrow precedent ([Proposal #82](https://gonka.gg/network/proposals/82)): https://github.com/gonka-ai/gonka/discussions/1388
