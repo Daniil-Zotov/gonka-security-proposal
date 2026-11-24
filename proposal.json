@@ -1,0 +1,71 @@
+{
+  "messages": [
+    {
+      "@type": "/cosmwasm.wasm.v1.MsgInstantiateContract2",
+      "sender": "gonka10d07y265gmmuvt4z0w9aw880jnsr700j2h5m33",
+      "admin": "",
+      "code_id": "107",
+      "label": "quorint-security-milestone-escrow",
+      "msg": {
+        "governance": "gonka10d07y265gmmuvt4z0w9aw880jnsr700j2h5m33",
+        "payouts": [
+          {
+            "recipient": "gonka1ggt0d4jqmztnmh86na3m99c9d3q7s6h2dkd2qv",
+            "denom": "ngonka",
+            "amount": "250000000000000",
+            "unlock_after_days": 0
+          },
+          {
+            "recipient": "gonka1ggt0d4jqmztnmh86na3m99c9d3q7s6h2dkd2qv",
+            "denom": "ngonka",
+            "amount": "300000000000000",
+            "unlock_after_days": 45
+          },
+          {
+            "recipient": "gonka1ggt0d4jqmztnmh86na3m99c9d3q7s6h2dkd2qv",
+            "denom": "ngonka",
+            "amount": "300000000000000",
+            "unlock_after_days": 90
+          },
+          {
+            "recipient": "gonka1ggt0d4jqmztnmh86na3m99c9d3q7s6h2dkd2qv",
+            "denom": "ngonka",
+            "amount": "300000000000000",
+            "unlock_after_days": 135
+          },
+          {
+            "recipient": "gonka1ggt0d4jqmztnmh86na3m99c9d3q7s6h2dkd2qv",
+            "denom": "ngonka",
+            "amount": "250000000000000",
+            "unlock_after_days": 180
+          },
+          {
+            "recipient": "gonka1ggt0d4jqmztnmh86na3m99c9d3q7s6h2dkd2qv",
+            "denom": "ngonka",
+            "amount": "200000000000000",
+            "unlock_after_days": 210
+          }
+        ],
+        "close_after_days": 270
+      },
+      "funds": [],
+      "salt": "cXVvcmludC1nb25rYS1zZWN1cml0eS0yMDI2",
+      "fix_msg": false
+    },
+    {
+      "@type": "/cosmos.distribution.v1beta1.MsgCommunityPoolSpend",
+      "authority": "gonka10d07y265gmmuvt4z0w9aw880jnsr700j2h5m33",
+      "recipient": "gonka1m5gr4pkemg7fyml3jlkecpvxzprrkglfu05jfe8kmm38780ajp5s9qznhg",
+      "amount": [
+        {
+          "denom": "ngonka",
+          "amount": "1600000000000000"
+        }
+      ]
+    }
+  ],
+  "metadata": "https://github.com/quorint/gonka-security-proposal/blob/<COMMIT_SHA>/README.md",
+  "deposit": "500000000000ngonka",
+  "title": "Quorint: Bridge Relaunch Security Review + 6-Month Attack Registry, Economic Attack Simulator & Upgrade Audits (Roadmap Track 6 P3, Track 5 P1/P2)",
+  "summary": "Funds a 24-week security engagement with Quorint (https://quorint.xyz): an independent security review for the Gonka-Ethereum bridge relaunch after the 18 November 2026 incident (Roadmap Track 6 P3), an executable attack registry (Track 5 P1), an economic attack simulator (Track 5 P2) and pre-mainnet upgrade audits. Allocates 1,600,000 GNK from the Community Pool (no USDT) to a new instance of the code_id 107 milestone escrow used by Proposal #82 (escrow gonka1m5gr4pkemg7fyml3jlkecpvxzprrkglfu05jfe8kmm38780ajp5s9qznhg, no admin, no migration), paying Quorint (gonka1ggt0d4jqmztnmh86na3m99c9d3q7s6h2dkd2qv) in six tranches on days 0, 45, 90, 135, 180 and 210: 250,000 / 300,000 / 300,000 / 300,000 / 250,000 / 200,000 GNK. A public milestone report is due 5 days before each unlock. Governance can claw back everything still in the escrow with one vote; after day 270 anyone can sweep the remainder to the Community Pool. Full commit-pinned proposal: https://github.com/quorint/gonka-security-proposal/blob/<COMMIT_SHA>/README.md"
+}
